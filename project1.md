@@ -148,8 +148,10 @@ Create a new file named index.php inside your custom web root folder:
 
 and paste this in:
 
-`<?php
-phpinfo();`
+```
+<?php
+phpinfo();
+```
 
 Save the file and reload the web page, you should see this:
 
