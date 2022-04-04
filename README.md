@@ -1,1 +1,1 @@
-Documentation of various projects completed via darey.io pbl DevOps Programme.
+Documentation of various projects completed via darey.io pbl DevOps Program.
