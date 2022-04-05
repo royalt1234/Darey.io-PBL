@@ -130,7 +130,7 @@ Connect to the MySQL console using the root account: `sudo mysql`
 
 ![](./images/sql.png)
 
-Create a new database from your MySQL console: `mysql> CREATE DATABASE `example_database`;`
+Create a new database from your MySQL console: `mysql> CREATE DATABASE example_database;`
 
 Create a new user and grant him full privileges on the just created database:
 `mysql>  CREATE USER 'example_user'@'%' IDENTIFIED WITH mysql_native_password BY 'password';`
