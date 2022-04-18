@@ -48,7 +48,7 @@ GRANT ALL PRIVILEGES ON admin_test_db.* TO 'admin123'@'%' WITH GRANT OPTION;
 
 CREATE DATABASE admin_test_db;
 
-FLUSH PRIVILEGES
+FLUSH PRIVILEGES;
 ```
 
 ![](/images/p5/ScreenShot_4_15_2022_4_01_44_PM.png)
