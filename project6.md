@@ -53,6 +53,9 @@ sudo pvcreate /dev/xvdh1
 ```
 sudo vgcreate webdata-vg /dev/xvdh1 /dev/xvdg1 /dev/xvdf1
 ```
+
+![pvcreate](./images/p6/pvcreate.png)
+
 * Verify that your VG has been created successfully by running `sudo vgs`
 ---
 * Use `lvcreate` utility to create 2 logical volumes. 'apps-lv' (Use half of the PV size), and 'logs-lv' Use the remaining space of the PV size.
@@ -64,7 +67,6 @@ apps-lv will be used to store data for the Website while, logs-lv will be used t
 
 * Verify that your Logical Volume has been created successfully by running `sudo lvs`
 
-![pvcreate](./images/p6/pvcreate.png)
 
 ---
 * Verify the entire setup
