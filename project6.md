@@ -13,7 +13,7 @@ In this project we will prepare storage infrastructure on two Linux servers on A
 ---
 * Open up the Linux terminal to begin configuration
 
-* Use lsblk command to inspect what block devices are attached to the server. Notice names of your newly created devices. All devices in Linux reside in /dev/ directory. Inspect it with ls /dev/ and make sure you see all 3 newly created block devices there - their names will likely be xvdf, xvdh, xvdg.
+* Use lsblk command to inspect what block devices are attached to the server. Notice names of your newly created devices. 
 
 ![lsblk](./images/p6/lsblk.png)
 
@@ -96,7 +96,6 @@ sudo mkdir -p /home/recovery/logs
 ```
 sudo mount /dev/webdata-vg/apps-lv /var/www/html/
 ```
-![sudo mkdir html](images/p6/mkdir.png)
 
 ---
 
@@ -104,6 +103,9 @@ sudo mount /dev/webdata-vg/apps-lv /var/www/html/
 ```
 sudo rsync -av /var/log/. /home/recovery/logs/
 ```
+
+![sudo mkdir html](images/p6/mkdir.png)
+
 * Mount `/var/log` on `logs-lv` logical volume. (Note that all the existing data on /var/log will be deleted. That is why step above is very important)
 ```
 sudo mount /dev/webdata-vg/logs-lv /var/log
@@ -133,9 +135,7 @@ sudo vi /etc/fstab
 sudo mount -a
 sudo systemctl daemon-reload
 ```
-* Verify your setup by running `df -h`, output must look like this:
-
-![test config](images/p6/df-h.png)
+* Verify your setup by running `df -h`
 
 ---
 
@@ -144,7 +144,7 @@ Launch a second RedHat EC2 instance that will have a role - ‘DB Server’ Repe
 
 
 
-## Step 4 — Install MySQL on your DB Server EC2
+## Step 3 — Install MySQL on your DB Server EC2
 * Connect to database server and install MySQL
 ```
 sudo yum update
@@ -159,7 +159,7 @@ sudo systemctl enable mysqld
 ![status mysqld](./images/p6/mysqld-status.png)
 
 ---
-## Step 5 — Configure DB to work with WordPress
+## Step 4 — Configure DB to work with WordPress
 
 * Start mysql service and create database and user
 ```
@@ -173,7 +173,7 @@ exit
 ```
 
 ---
-## Step 6 — Configure WordPress to connect to remote database
+## Step 5 — Configure WordPress to connect to remote database
 * Do not forget to open MySQL port 3306 on DB Server EC2. For extra security, you shall allow access to the DB server ONLY from your Web Server’s IP address, so in the Inbound Rule configuration specify source as /32
 
 
