@@ -2,7 +2,7 @@
 
 ### Part 1 – Configure Nginx As A Load Balancer
 1. Spin up an EC2 server with Ubuntu OS and install Nginx. Open port 80 and HTTPS port 443.
-![](./images/p10/ScreenShot_4_26_2022_12_33_14_PM.png)
+![](./images/p10/server.png)
 
 ![](./images/p10/ec2.png)
 
