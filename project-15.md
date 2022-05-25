@@ -34,19 +34,20 @@ The infrastructure for both websites; WordPress and Tooling, is resilient to Web
 ### Set Up a Virtual Private Network (VPC)
 
 1. Create a VPC
+![](/images/p15/ScreenShot_5_25_2022_10_55_43_AM.png)
 2. Create subnets as shown in the architecture
-
 ![](/images/p15/ScreenShot_5_25_2022_11_26_14_AM.png)
-
 3. Create a route table and associate it with public subnets
+![](/images/p15/PuRT.png)
 4. Create a route table and associate it with private subnets
-5. Created an Internet Gateway
+![](/images/p15/PriRT.png)
+5. Create an Internet Gateway
+![](/images/p15/igw.png)
 6. Edit a route in public route table, and associate it with the Internet Gateway. (This is what allows a public subnet to be accisble from the Internet).
 7. Created 3 Elastic IPs.
 8. Created a Nat Gateway and assigned one of the Elastic IPs (*The other 2 was used by Bastion hosts).
 9. Created security groups for different services in the architecture
 
-![](/images/p15/ScreenShot_5_25_2022_10_55_43_AM.png)
 
 - **Nginx Servers:** Access to Nginx should only be allowed from a Application Load balancer (ALB). At this point, we have not created a load balancer, therefore we will update the rules later. For now, just create it and put some dummy records as a place holder.
 
@@ -100,27 +101,23 @@ Go to Target Groups section and create a new target group.
 3. Ensure that the health check path is /healthstatus
 4. Register Nginx Instances as targets
 5. Ensure that health check passes for the target group
+![](/images/p15/ACS-Nginx-target.png)
+![](/images/p15/ACS-tooling-target.png)
 
 
 #### Configure Autoscaling For Nginx
 1. Select the right launch template
-
 2. Select the VPC
-
 3. Select both public subnets
 4. Enable Application Load Balancer for the AutoScalingGroup (ASG)
-
 5. Select the target group you created before
 6. Ensure that you have health checks for both EC2 and ALB
-
 7. The desired capacity is 2
 8. Minimum capacity is 2
 9. Maximum capacity is 4
 10. Set scale out if CPU utilization reaches 90%
-
 11. Ensure there is an SNS topic to send scaling notifications
 
-![](/images/p15/ScreenShot_5_25_2022_6_52_11_PM.png)
 
 ### Set Up Compute Resources for Bastion
 
@@ -141,6 +138,8 @@ yum install -y mysql
 yum install -y git tmux
 yum install -y ansible
 ```
+
+![](/images/p15/launch-templates.png)
 
 #### Configure Target Groups
 Go to Target Groups section and create a new target group.
@@ -200,14 +199,10 @@ You will need TLS certificates to handle secured connectivity to your Applicatio
 Nginx EC2 Instances will have configurations that accepts incoming traffic only from Load Balancers. This will allow us to offload SSL/TLS certificates on the ALB instead of Nginx. Therefore, Nginx will be able to perform faster since it will not require extra compute resources to valifate certificates for every request.
 
 1. Create an Internet facing ALB
-
 2. Ensure that it listens on HTTPS protocol (TCP port 443)
 3. Ensure the ALB is created within the appropriate VPC | AZ | Subnets
-
 4. Choose the Certificate from ACM
-
 5. Select Security Group
-
 6. Select Nginx Instances as the target group
 
 
@@ -224,6 +219,7 @@ To solve this problem, we must use a load balancer. But this time, it will be an
 6. Select webserver Instances as the target group
 7. Ensure that health check passes for the target group
 
+![](/images/p15/acs-int-alb.png)
 
 ### STEP 5:Setup EFS
 
@@ -242,17 +238,14 @@ We need to create a KMS to encrypt our database as a security measure.
 To ensure that our databases are highly available and also have failover support in case one availability zone fails, we will configure a multi-AZ set up of RDS MySQL database instance.
 
 1. Create a subnet group and add 2 private subnets (data Layer)
-
 2. Create an RDS Instance for mysql 8.*.*
-
 3. To satisfy our architectural diagram, select either Dev/Test or Production Sample Template. But to minimize AWS cost, selected the **Do not create a standby** instance option under Availability & durability sample template (The production template will enable Multi-AZ deployment)
-
 4. Configure other settings accordingly (For test purposes, most of the default settings are good to go). 
 5. Configure VPC and security (ensure the database is not available from the Internet)
 6. Configure backups and retention
 7. Encrypt the database using the KMS key created earlier
 8. Enable CloudWatch monitoring and export Error and Slow Query logs (for production, also include Audit).
-
+![](/images/p15/rdsdatbase.png)
 ## STEP 6: Configuring DNS with Route53
 
 You can use either CNAME or alias records to achieve the same thing. But alias record has better functionality because it is a faster to resolve DNS record, and can coexist with other records on that name. I used A Records for this project. 
@@ -266,3 +259,6 @@ You can use either CNAME or alias records to achieve the same thing. But alias r
 ![](/images/p15/ScreenShot_5_25_2022_8_26_22_PM.png)
 
 ![](/images/p15/ScreenShot_5_25_2022_8_26_10_PM.png)
+
+
+**LINK TO MY PROJECT CONFIG REPO**; https://github.com/royalt1234/ACS-project-config.git
