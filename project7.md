@@ -2,7 +2,7 @@
 
 ### STEP 1 – PREPARE THE NFS SERVER
 
-1. Spin up a RHEL Linux EC2 Instance
+1. Spin up a RHEL Linux EC2 Instance.
 
 ![](./images/p7/ScreenShot_4_25_2022_3_00_43_PM.png)
 
@@ -16,13 +16,13 @@ N.B: There are 3 Logical Volumes. <b>lv-opt, lv-apps, and lv-logs</b>
 
 3. Create mount points on /mnt directory for the logical volumes:
 
-    *Mount `lv-apps` on `/mnt/apps` – for webservers <br>
+    **Mount `lv-apps` on `/mnt/apps` – for webservers <br>
     Mount `lv-logs` on `/mnt/logs` – for webserver logs <br>
-    Mount `lv-opt` on `/mnt/opt` – for Jenkins server in project 8*
+    Mount `lv-opt` on `/mnt/opt` – for Jenkins server in project 8**
 
 ![](./images/p7/ScreenShot_4_25_2022_3_48_16_PM.png)
 
-4. Install NFS server and configure it to start on reboot
+4. Install NFS server and configure it to start on reboot.
 ```
 sudo yum -y update
 sudo yum install nfs-utils -y

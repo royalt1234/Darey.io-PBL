@@ -4,7 +4,7 @@
 
 1. Using the same server used for Jenkins as our ansible server, update the name to Jenkins-Ansible.
 
-2. Created a new repo called ansible-config-mgt.
+2. Create a new repo called ansible-config-mgt
 
 ![](./images/p11/ScreenShot_5_7_2022_3_22_14_PM.png)
 
@@ -17,7 +17,7 @@ sudo apt install ansible
 
 ![](./images/p11/ScreenShot_5_7_2022_3_36_58_PM.png)
 
-4. Setup Jenkins project to automatically build the ansible-config-mgt repo once there is an update to master branch
+4. Setup Jenkins project, to automatically build the ansible-config-mgt repo once there is an update to master branch
 
 ![](/images/p11/ScreenShot_5_7_2022_3_56_55_PM.png)
 
@@ -30,7 +30,7 @@ sudo apt install ansible
 
 Install Visual Studio Code and configure it to connect to your newly created GitHub repository.
 
-Clone down your ansible-config-mgt repo to your Jenkins-Ansible instance
+Clone down your ansible-config-mgt repo to your Jenkins-Ansible instance:
 ```
 git clone <ansible-config-mgt repo link>
 ```
@@ -39,11 +39,10 @@ git clone <ansible-config-mgt repo link>
 
 ### STEP 3 - BEGIN ANSIBLE DEVELOPMENT
 
-1. Create a new feature branch to develop the ansible playbook
-
-2. Checkout the feature branch
-3. Create a **playbook** directory - holds the ansible tasks and operations to be performed.
-4. Create an **inventory** directory - holds the hosts file.
+1. Create a new feature branch to develop the ansible playbook.
+2. Checkout the feature branch.
+3. Create a **playbook** directory (holds the ansible tasks and operations to be performed).
+4. Create an **inventory** directory (holds the hosts file).
 5. Create a common.yml file inside the playbook directory. This contains some of tasks to be run on all the hosts.
 6. Create hosts file(dev.yml, staging.yml, uat.yml and prod.yml) inside the inventory directory. These files contains the list of hosts to be managed.
 
