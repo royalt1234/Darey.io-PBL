@@ -192,7 +192,7 @@ N.B:<i> If you encounter 403 Error – check permissions to your /var/www/html f
 To make this change permanent – open following config file sudo vi /etc/sysconfig/selinux and set `SELINUX=disabled` then restart httpd. Also, make sure TCP port 80 is opened on the web server.</i>
 
 
-10. Update the website’s configuration to connect to the database (in /var/www/html/functions.php file). 
+10. Update the website configuration to connect to the database (in /var/www/html/functions.php file). 
 
 ![](./images/p7/ScreenShot_4_25_2022_8_26_50_PM.png)
 
