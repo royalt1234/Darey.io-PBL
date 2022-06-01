@@ -1,6 +1,8 @@
 # AUTOMATE INFRASTRUCTURE WITH IAC USING TERRAFORM PART 1
 ![infra-design](./images/p16/iac-project.png)
-I built this infrastructure on AWS using the console in [project15](). In this project(divided into 4 parts for easy understanding to beginners who may refrence this report for assistance), I created same infrastructure but I'd be using IaC for this build, My IaC tools is Terraform. 
+I built this infrastructure on AWS using the console in [project15](https://github.com/royalt1234/Darey.io-PBL/blob/master/project-15.md). In this project(divided into 4 parts for easy understanding to beginners who may refrence this report for assistance), I created same infrastructure but I'd be using IaC for this build, My IaC tools is Terraform. 
+
+> I wrote a blog post about this project. You can have a read [here](https://dev.to/moses_itoya/creating-a-company-infrastructure-in-aws-using-terraform-4d13) or [here](https://community.ops.io/royalt1234/creating-a-company-infrastructure-in-aws-using-terraform-5hd7).
 
 **PREREQUISITES**
 
