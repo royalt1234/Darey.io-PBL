@@ -7,6 +7,8 @@ I built this infrastructure on AWS using the console in [project15](https://gith
 
 > I wrote a blog post about this project. You can have a read [here](https://dev.to/moses_itoya/creating-a-company-infrastructure-in-aws-using-terraform-4d13) or [here](https://community.ops.io/royalt1234/creating-a-company-infrastructure-in-aws-using-terraform-5hd7).
 
+[This](https://github.com/royalt1234/terraform-aws-infra/tree/master/terraform) is the link to my repo containing my code.
+
 **PREREQUISITES**
 
 - Create an IAM user, name it **terraform** (ensure that the user has only programatic access to your AWS account) and **grant this user AdministratorAccess permissions**.
