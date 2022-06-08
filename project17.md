@@ -1402,3 +1402,4 @@ db_name = "Doeita-db"
 
 ## SIDE NOTE
 
+[HERE IS A LINK TO MY REPO FOR THIS PROJECT](https://github.com/royalt1234/terrafrom-prj17-code/tree/master/terraform)
