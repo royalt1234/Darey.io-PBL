@@ -1400,6 +1400,45 @@ db_name = "Doeita-db"
 
 ```
 
+[HERE IS A LINK TO MY REPO FOR THIS PROJECT](https://github.com/royalt1234/terrafrom-prj17-code/tree/master/terraform)
+
 ## SIDE NOTE
 
-[HERE IS A LINK TO MY REPO FOR THIS PROJECT](https://github.com/royalt1234/terrafrom-prj17-code/tree/master/terraform)
+### IP
+
+Networks can be linked together, but traffic must be routed when crossing network boundaries. The IP protocol assumes an unreliable network and multiple paths to the same destination that it can dynamically change between.
+
+There are a number of different implementations of the protocol. The most common implementation today is IPv4, although IPv6 is growing in popularity as an alternative due to the scarcity of IPv4 addresses available and improvements in the protocols capabilities.
+
+### SUBNETS
+A network can be devided into smaller network sections called subnets. This process is called subnetting. This can be useful for many different purposes and helps isolate groups of hosts from each other to deal with them more easily.
+
+Each address space is divided into a network portion and a host portion. The amount of the address that each of these take up is dependent on the class that the address belongs to. For instance, for class C addresses, the first 3 octets are used to describe the network. For the address `192.168.0.15`, the `192.168.0` portion describes the network and the 15 describes the host.
+
+By default, each network has only one subnet, which contains all of the host addresses defined within. A netmask is basically a specification of the amount of address bits that are used for the network portion. A subnet mask is another netmask within used to further divide the network.
+
+### CIDR Notation
+
+Classless Inter-Domain Routing, or CIDR, is a system developed as an alternative to traditional subnetting. The idea is that you can add a specification in the IP address itself as to the number of significant bits that make up the routing or networking portion.
+
+For example, we could express the idea that the IP address `192.168.0.15` is associated with the netmask `255.255.255.0` by using the CIDR notation of `192.168.0.15/24`. This means that the first 24 bits of the IP address given are considered significant for the network routing.
+
+This allows us some interesting possibilities. We can use these to reference “supernets”. In this case, we mean a more inclusive address range that is not possible with a traditional subnet mask. CIDR allows us more control over addressing continuous blocks of IP addresses. This is much more useful than the subnetting we talked about originally.
+
+### IP Routing
+
+IP routing is the process of sending packets from a host on one network to another host on a different remote network. This process is usually done by routers. Routers examine the destination IP address of a packet , determine the next-hop address, and forward the packet. Routers use routing tables to determine the next hop address to which the packet should be forwarded.
+
+for example, Host A wants to communicate with host B, but host B is on another network. Host A is configured to send all packets destined for remote networks to router R1. Router R1 receives the packets, examines the destination IP address and forwards the packet to the outgoing interface associated with the destination network.
+
+### INTERNET GATEWAYS
+An Internet gateway is a network "node" that connects two different networks that use different protocols (rules) for communicating. In the most basic terms, an Internet gateway is where data stops on its way to or from other networks. Thanks to gateways, we can communicate and send data back and forth with each other.
+
+Gateways can take several different forms from hardware to software - including routers and computers - and can perform a variety of tasks. These can range from passing traffic to the next 'hop' on its path to filtering traffic, proxies, or protocol translations. Because gateways are, by definition, at the edge of a network, they are often combined with firewalls, which keep out unwanted traffic or 'foreign' computers from a closed network.
+
+If your Internet gateway is a computer server, which is more likely in an office or business situation, it acts as a firewall and a proxy server. A firewall which keeps unwanted traffic and outside computers out of a private network. A proxy server makes sure that the actual server can handle your online data requests.
+
+### NAT
+Each IP address must be unique on its own network. Networks can be isolated from one another, and they can be bridged and translated to provide access between distinct networks. A system called Network Address Translation, allows the addresses to be rewritten when packets traverse network borders to allow them to continue on to their correct destination. This allows the same IP address to be used on multiple, isolated networks while still allowing these to communicate with each other if configured correctly.
+
+
