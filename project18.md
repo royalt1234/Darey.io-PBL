@@ -386,7 +386,7 @@ resource "aws_db_instance" "read_replica" {
 
 ## Terraform Modules
 
-Tob work with best practice it is important to write reusable code. And in line with thatterraform provides us with a tool called Terraform Module.
+To work with best practice it is important to write reusable code. And in line with thatterraform provides us with a tool called Terraform Module.
 
 Modules serve as containers that allow to logically group Terraform codes for similar resources in the same domain (e.g., Compute, Networking, AMI, etc.). One root module can call other child modules and insert their configurations when applying Terraform config. This concept makes your code structure neater, and it allows different team members to work on different parts of configuration at the same time.
 
