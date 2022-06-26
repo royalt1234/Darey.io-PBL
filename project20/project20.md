@@ -156,7 +156,8 @@ ENTRYPOINT [  "bash", "start-apache.sh" ]
 - Simulate a Docker push
  
 - Verify the images can be found in the registry
-
+    ![](./img/ScreenShot_6_21_2022_7_58_28_PM.png)
+    ![](./img/ScreenShot_6_21_2022_8_00_11_PM.png)
 
 ### Deployment with Docker Compose
 - Install Docker Compose (https://docs.docker.com/compose/install/)
@@ -188,6 +189,7 @@ ENTRYPOINT [  "bash", "start-apache.sh" ]
     ```
 - Run the command `docker-compose -f tooling.yaml up -d` to start the containers.
 - Verify the containers are running `docker-compose -f tooling.yaml ps`
+    ![](./img/ScreenShot_6_21_2022_8_51_20_PM.png)
 
 ## Practice Task 2
 ### 1. Document understanding of the various fields in `tooling.yaml`
@@ -203,5 +205,7 @@ ENTRYPOINT [  "bash", "start-apache.sh" ]
   - restart tells the container how frequently to restart
   - environment is used to pass environment variables required for the service running in the container
 
+    ![](./img/ScreenShot_6_21_2022_11_10_04_AM.png)
+    ![](./img/ScreenShot_6_21_2022_12_13_51_PM.png)
 
 Link to php-todo repo: https://github.com/royalt1234/php-todo-for-docker.git
