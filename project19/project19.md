@@ -36,3 +36,5 @@
 
 11. Test automated terraform plan
 By now, you have tried to launch plan and apply manually from Terraform Cloud web console. But since we have an integration with GitHub, the process can be triggered automatically. Try to change something in any of .tf files and look at "Runs" tab again – plan must be launched automatically, but to apply you still need to approve manually.
+
+Link to the final Repo: https://github.com/royalt1234/Dry-run-terraform.git

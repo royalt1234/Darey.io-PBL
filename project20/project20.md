@@ -18,7 +18,8 @@ I wrote an article about running docker without sudo, you can cgec it out [here]
   list the images you have on your instance `docker image ls`
 
 - Deploy the MySQL Container
-  ```docker run --name <container_name> -e MYSQL_ROOT_PASSWORD=<my-secret-pw> -d mysql/mysql-server:latest
+  ```
+  docker run --name <container_name> -e MYSQL_ROOT_PASSWORD=<my-secret-pw> -d mysql/mysql-server:latest
   ```
   
   Run `docker ps -a` to see all your containers (running or stopped)
@@ -150,9 +151,6 @@ ENTRYPOINT [  "bash", "start-apache.sh" ]
 
 ### Part 3
 - Write a Jenkinsfile for Docker build and push to registry
-  ```
-  
-  ```
 - Connect the repo to Jenkins (using Blue Ocean plugin)
 - Create a multibranch pipeline
 - Simulate a Docker push
