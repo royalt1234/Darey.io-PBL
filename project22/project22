@@ -139,6 +139,7 @@ spec:
 
 > Allow the inbound traffic in your EC2’s Security Group to the NodePort range 30000-32767
 > Get the public IP address of the node the Pod is running on, append the nodeport and access the app through the browser.
+
 ![](./img/ScreenShot_6_27_2022_12_08_16_PM.png)
 
 ### USING AWS LOAD BALANCER TO ACCESS YOUR SERVICE IN KUBERNETES.
