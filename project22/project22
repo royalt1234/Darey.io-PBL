@@ -206,7 +206,7 @@ Let us see how we can use both to scale our Replicaset up and down:
 
 **Imperative:**
 
-- We can easily scale our ReplicaSet up by specifying the desired number of replicas in an imperative command, like this:
+- We can now easily scale our ReplicaSet up by specifying the desired number of replicas in an imperative command, like this:
 ```
 kubectl scale rs nginx-rs --replicas=5
 ```
