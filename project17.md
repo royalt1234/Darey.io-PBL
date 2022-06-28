@@ -1,6 +1,6 @@
 # AUTOMATE INFRASTRUCTURE WITH IAC USING TERRAFORM. PART 2
 
-To better understand this project, it is advised to have some basic understandig of some important networkih=ng concepts. Read up on Networking:
+To better understand this project, it is advised to have some basic understandig of some important networking concepts. Read up on Networking:
 - [Introduction to Networking](https://youtu.be/rL8RSFQG8do)
 - [TCP/IP and Subnet Masking](https://youtu.be/EkNq4TrHP_U)
 - [Networking Series](https://www.youtube.com/playlist?list=PLF360ED1082F6F2A5)
