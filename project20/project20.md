@@ -7,7 +7,7 @@
   sh ./get-docker.sh
   usermod -aG docker ubuntu
   ```
-I wrote an article about running docker without sudo, you can cgec it out [here]()
+I wrote an article about running docker without sudo, you can check it out [here]()
 
 ## MySQL in Container
 - Pull MySQL Docker image from Docker Hub
